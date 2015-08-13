@@ -1,2 +1,4 @@
 # Android Cortana Animation [Under Development]
-Cortana Animation in Android.
+This Project is a demo of creating Microsoft Cortana Animations in Android.
+
+
