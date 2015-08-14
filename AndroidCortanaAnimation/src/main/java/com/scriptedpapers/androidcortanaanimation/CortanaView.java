@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.scriptedpapers.androidcortanaanimation.helper.ThinkViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.ListenViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.OptimisticViewHelper;
@@ -78,18 +79,28 @@ public class CortanaView  extends View {
 
         stopAnimation();
 
-        if(type == CortanaType.LISTEN_TYPE) {
-            cortanaInterface = new ListenViewHelper();
-        } else if(type == CortanaType.SPEAK_TYPE) {
-            cortanaInterface = new SpeakViewHelper();
-        } else if(type == CortanaType.REMIND_TYPE) {
-            cortanaInterface = new RemindViewHelper();
-        } else if(type == CortanaType.OPTIMISTIC_TYPE) {
-            cortanaInterface = new OptimisticViewHelper();
-        } else if(type == CortanaType.REMIND_2_TYPE) {
-            cortanaInterface = new Remind2ViewHelper();
-        } else if(type == CortanaType.COOL_TYPE) {
-            cortanaInterface = new CoolViewHelper();
+        switch(type) {
+            case CortanaType.LISTEN_TYPE:
+                cortanaInterface = new ListenViewHelper();
+                break;
+            case CortanaType.SPEAK_TYPE:
+                cortanaInterface = new SpeakViewHelper();
+                break;
+            case CortanaType.REMIND_TYPE:
+                cortanaInterface = new RemindViewHelper();
+                break;
+            case CortanaType.OPTIMISTIC_TYPE:
+                cortanaInterface = new OptimisticViewHelper();
+                break;
+            case CortanaType.REMIND_2_TYPE:
+                cortanaInterface = new Remind2ViewHelper();
+                break;
+            case CortanaType.COOL_TYPE:
+                cortanaInterface = new CoolViewHelper();
+                break;
+            case CortanaType.THINK_TYPE:
+                cortanaInterface = new ThinkViewHelper();
+                break;
         }
 
         int diameter = (getLayoutParams().width < getLayoutParams().height)?getLayoutParams().width:getLayoutParams().height;
