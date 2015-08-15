@@ -2,15 +2,10 @@ package com.scriptedpapers.androidcortanaanimationdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.scriptedpapers.androidcortanaanimation.CortanaView;
 import com.scriptedpapers.androidcortanaanimation.utils.CortanaType;
@@ -29,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
     static final String[] ANIM_NAME = new String[] {
             "Listen", "Speak",
             "Remind", "Optimistic",
-            "Remind 2", "Cool"};
+            "Remind 2", "Cool",
+            "Think"};
 
     static final int[] ANIM_TYPE = new int[] {
             CortanaType.LISTEN_TYPE, CortanaType.SPEAK_TYPE,
             CortanaType.REMIND_TYPE, CortanaType.OPTIMISTIC_TYPE,
-            CortanaType.REMIND_2_TYPE, CortanaType.COOL_TYPE};
+            CortanaType.REMIND_2_TYPE, CortanaType.COOL_TYPE,
+            CortanaType.THINK_TYPE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
