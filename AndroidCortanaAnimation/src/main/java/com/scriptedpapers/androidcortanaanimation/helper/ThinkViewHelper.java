@@ -43,8 +43,8 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
 
         mOuterCirclePaint.setStrokeCap(Paint.Cap.ROUND);
 
-        mInnerCirclePaint.setColor(CortanaType.THINK_INNER_CIRCLE_COLOR);
-        mOuterCirclePaint.setColor(CortanaType.THINK_OUTER_CIRCLE_COLOR);
+        mInnerCirclePaint.setColor(CortanaType.OUTER_CIRCLE_COLOR);
+        mOuterCirclePaint.setColor(CortanaType.INNER_CIRCLE_COLOR);
 
         mInnerCirclePaint.setAntiAlias(true);
         mOuterCirclePaint.setAntiAlias(true);

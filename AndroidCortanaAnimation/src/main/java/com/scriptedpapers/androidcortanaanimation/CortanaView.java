@@ -5,6 +5,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.scriptedpapers.androidcortanaanimation.helper.AshamedViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.NeedMoreViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.SnowViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.ThinkViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.ListenViewHelper;
@@ -79,6 +82,8 @@ public class CortanaView  extends View {
 
         stopAnimation();
 
+        setRotation(0);
+
         switch(type) {
             case CortanaType.LISTEN_TYPE:
                 cortanaInterface = new ListenViewHelper();
@@ -100,6 +105,12 @@ public class CortanaView  extends View {
                 break;
             case CortanaType.THINK_TYPE:
                 cortanaInterface = new ThinkViewHelper();
+                break;
+            case CortanaType.ASHAMED_TYPE:
+                cortanaInterface = new AshamedViewHelper();
+                break;
+            case CortanaType.NEED_MORE_TYPE:
+                cortanaInterface = new NeedMoreViewHelper();
                 break;
         }
 
