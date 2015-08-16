@@ -132,7 +132,11 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
 
     @Override
     public void stopAnimation() {
-        mAnimator.end();
+
+        if(mAnimator != null) {
+            mAnimator.end();
+            mAnimator = null;
+        }
     }
 
     @Override

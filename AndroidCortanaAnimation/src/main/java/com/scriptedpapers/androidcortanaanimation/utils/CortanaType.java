@@ -14,6 +14,8 @@ public class CortanaType {
     public static final int THINK_TYPE = 6;
     public static final int ASHAMED_TYPE = 7;
     public static final int NEED_MORE_TYPE = 8;
+    public static final int GREETING_TYPE = 9;
+    public static final int GREETING_2_TYPE = 10;
 
     public static final int INNER_CIRCLE_COLOR = 0xFF139FEB;
     public static final int OUTER_CIRCLE_COLOR = 0x80139FEB;
