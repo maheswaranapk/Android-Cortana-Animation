@@ -5,8 +5,8 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.scriptedpapers.androidcortanaanimation.helper.BouncyViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.AshamedViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.BouncyViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.Greeting2ViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.GreetingViewHelper;

@@ -25,16 +25,17 @@ public class MainActivity extends AppCompatActivity {
             "Listen", "Speak",
             "Remind", "Optimistic",
             "Remind 2", "Cool",
-            "Think"};
+            "Think", "Ashamed",
+            "Need  More", "Greeting",
+            "Greeting 2", "Bouncy"};
 
     static final int[] ANIM_TYPE = new int[] {
             CortanaType.LISTEN_TYPE, CortanaType.SPEAK_TYPE,
             CortanaType.REMIND_TYPE, CortanaType.OPTIMISTIC_TYPE,
             CortanaType.REMIND_2_TYPE, CortanaType.COOL_TYPE,
-            CortanaType.THINK_TYPE, CortanaType.BOUNCY_TYPE,
             CortanaType.THINK_TYPE, CortanaType.ASHAMED_TYPE,
             CortanaType.NEED_MORE_TYPE, CortanaType.GREETING_TYPE,
-            CortanaType.GREETING_2_TYPE};
+            CortanaType.GREETING_2_TYPE, CortanaType.BOUNCY_TYPE,};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -37,8 +37,8 @@ public class BouncyViewHelper implements CortanaInterface, Animator.AnimatorList
         mInnerCirclePaint.setStyle(Paint.Style.STROKE);
         mOuterCirclePaint.setStyle(Paint.Style.STROKE);
 
-        mInnerCirclePaint.setColor(CortanaType.THINK_INNER_CIRCLE_COLOR);
-        mOuterCirclePaint.setColor(CortanaType.THINK_OUTER_CIRCLE_COLOR);
+        mInnerCirclePaint.setColor(CortanaType.INNER_CIRCLE_COLOR);
+        mOuterCirclePaint.setColor(CortanaType.OUTER_CIRCLE_COLOR);
 
         mInnerCirclePaint.setAntiAlias(true);
         mOuterCirclePaint.setAntiAlias(true);
