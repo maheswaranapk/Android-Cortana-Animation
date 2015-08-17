@@ -1,7 +1,7 @@
 package com.scriptedpapers.androidcortanaanimationdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
             "Listen", "Speak",
             "Remind", "Optimistic",
             "Remind 2", "Cool",
-            "Think"};
+            "Think", "Bouncy"};
 
     static final int[] ANIM_TYPE = new int[] {
             CortanaType.LISTEN_TYPE, CortanaType.SPEAK_TYPE,
             CortanaType.REMIND_TYPE, CortanaType.OPTIMISTIC_TYPE,
             CortanaType.REMIND_2_TYPE, CortanaType.COOL_TYPE,
-            CortanaType.THINK_TYPE};
+            CortanaType.THINK_TYPE, CortanaType.BOUNCY_TYPE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

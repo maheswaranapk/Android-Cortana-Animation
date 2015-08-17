@@ -5,13 +5,14 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.scriptedpapers.androidcortanaanimation.helper.ThinkViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.BouncyViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.ListenViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.OptimisticViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.Remind2ViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.RemindViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.SpeakViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.ThinkViewHelper;
 import com.scriptedpapers.androidcortanaanimation.utils.CortanaType;
 
 /**
@@ -100,6 +101,9 @@ public class CortanaView  extends View {
                 break;
             case CortanaType.THINK_TYPE:
                 cortanaInterface = new ThinkViewHelper();
+                break;
+            case CortanaType.BOUNCY_TYPE:
+                cortanaInterface = new BouncyViewHelper();
                 break;
         }
 

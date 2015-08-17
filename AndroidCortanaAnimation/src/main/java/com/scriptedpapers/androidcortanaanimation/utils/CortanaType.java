@@ -12,6 +12,7 @@ public class CortanaType {
     public static final int REMIND_2_TYPE = 4;
     public static final int COOL_TYPE = 5;
     public static final int THINK_TYPE = 6;
+    public static final int BOUNCY_TYPE = 7;
 
     public static final int INNER_CIRCLE_COLOR = 0xFF139FEB;
     public static final int OUTER_CIRCLE_COLOR = 0x80139FEB;
