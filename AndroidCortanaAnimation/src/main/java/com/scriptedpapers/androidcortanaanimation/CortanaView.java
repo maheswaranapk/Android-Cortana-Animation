@@ -6,8 +6,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.scriptedpapers.androidcortanaanimation.helper.BouncyViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.AshamedViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.Greeting2ViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.GreetingViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.ListenViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.NeedMoreViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.OptimisticViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.Remind2ViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.RemindViewHelper;
@@ -80,6 +84,8 @@ public class CortanaView  extends View {
 
         stopAnimation();
 
+        setRotation(0);
+
         switch(type) {
             case CortanaType.LISTEN_TYPE:
                 cortanaInterface = new ListenViewHelper();
@@ -105,6 +111,17 @@ public class CortanaView  extends View {
             case CortanaType.BOUNCY_TYPE:
                 cortanaInterface = new BouncyViewHelper();
                 break;
+            case CortanaType.ASHAMED_TYPE:
+                cortanaInterface = new AshamedViewHelper();
+                break;
+            case CortanaType.NEED_MORE_TYPE:
+                cortanaInterface = new NeedMoreViewHelper();
+                break;
+            case CortanaType.GREETING_TYPE:
+                cortanaInterface = new GreetingViewHelper();
+                break;
+            case CortanaType.GREETING_2_TYPE:
+                cortanaInterface = new Greeting2ViewHelper();
         }
 
         int diameter = (getLayoutParams().width < getLayoutParams().height)?getLayoutParams().width:getLayoutParams().height;

@@ -41,8 +41,8 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
         mInnerCirclePaint.setStyle(Paint.Style.STROKE);
         mOuterCirclePaint.setStyle(Paint.Style.STROKE);
 
-        mInnerCirclePaint.setColor(CortanaType.THINK_INNER_CIRCLE_COLOR);
-        mOuterCirclePaint.setColor(CortanaType.THINK_OUTER_CIRCLE_COLOR);
+        mInnerCirclePaint.setColor(CortanaType.OUTER_CIRCLE_COLOR);
+        mOuterCirclePaint.setColor(CortanaType.INNER_CIRCLE_COLOR);
 
         mInnerCirclePaint.setAntiAlias(true);
         mOuterCirclePaint.setAntiAlias(true);
@@ -127,7 +127,11 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
 
     @Override
     public void stopAnimation() {
-        mAnimator.end();
+
+        if(mAnimator != null) {
+            mAnimator.end();
+            mAnimator = null;
+        }
     }
 
     @Override

@@ -5,7 +5,6 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 
 import com.scriptedpapers.androidcortanaanimation.CortanaInterface;
@@ -102,7 +101,6 @@ public class SpeakViewHelper implements CortanaInterface{
     public void stopAnimation() {
 
         if(outerRadiusAnimator != null) {
-
             outerRadiusAnimator.cancel();
             outerRadiusAnimator = null;
         }
