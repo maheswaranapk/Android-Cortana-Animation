@@ -28,7 +28,7 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
     RectF mInnerRect, mOuterRect;
 
     View mAnimatingView;
-    float mSizeInner, mSizeOuter;
+    float mInnerSize, mOuterSize;
     boolean mIsHalfDone;
 
     AnimatorSet mAnimator;
@@ -40,8 +40,6 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
 
         mInnerCirclePaint.setStyle(Paint.Style.STROKE);
         mOuterCirclePaint.setStyle(Paint.Style.STROKE);
-
-        mOuterCirclePaint.setStrokeCap(Paint.Cap.ROUND);
 
         mInnerCirclePaint.setColor(CortanaType.OUTER_CIRCLE_COLOR);
         mOuterCirclePaint.setColor(CortanaType.INNER_CIRCLE_COLOR);
@@ -58,27 +56,24 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
         mInnerCirclePaint.setStrokeWidth(mBorderWidth);
         mOuterCirclePaint.setStrokeWidth(mBorderWidth);
 
-        mInnerRect = new RectF();
-        mOuterRect = new RectF();
+        mOuterSize = diameter;
+        mOuterSize -= mBorderWidth / 2;
+        mInnerSize = mOuterSize - mBorderWidth;
 
-        mSizeOuter = diameter;
-        mSizeOuter -= mBorderWidth / 2;
-        mSizeInner = mSizeOuter - mBorderWidth;
-
-        mInnerRect.set((3 * mBorderWidth)/2, (3 * mBorderWidth)/2, mSizeInner, mSizeInner);
-        mOuterRect.set(mBorderWidth /2, mBorderWidth /2, mSizeOuter, mSizeOuter);
+        mInnerRect = new RectF((3 * mBorderWidth)/2, (3 * mBorderWidth)/2, mInnerSize, mInnerSize);
+        mOuterRect = new RectF(mBorderWidth /2, mBorderWidth /2, mOuterSize, mOuterSize);
     }
 
     @Override
     public void onDraw(Canvas canvas) {
         if (mIsHalfDone) {
-            canvas.drawArc(mOuterRect, 270, 180, false, mOuterCirclePaint);
+            canvas.drawArc(mOuterRect, 270, 181, false, mOuterCirclePaint);
             canvas.drawOval(mInnerRect, mInnerCirclePaint);
-            canvas.drawArc(mOuterRect, 90, 180, false, mOuterCirclePaint);
+            canvas.drawArc(mOuterRect, 90, 181, false, mOuterCirclePaint);
         } else {
-            canvas.drawArc(mOuterRect, 90, 180, false, mOuterCirclePaint);
+            canvas.drawArc(mOuterRect, 90, 181, false, mOuterCirclePaint);
             canvas.drawOval(mInnerRect, mInnerCirclePaint);
-            canvas.drawArc(mOuterRect, 270, 180, false, mOuterCirclePaint);
+            canvas.drawArc(mOuterRect, 270, 181, false, mOuterCirclePaint);
         }
     }
 
@@ -90,17 +85,17 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
         mAnimatingView = view;
         if (mAnimator == null) {
             ObjectAnimator firstCircleAnim = ObjectAnimator.ofFloat(this, "rectSizeFirst",
-                    0, (mSizeOuter / 2) - (mBorderWidth * 0.4f), 0);
+                    0, (mOuterSize / 2) - (mBorderWidth * 0.4f), 0);
             firstCircleAnim.setInterpolator(new AccelerateDecelerateInterpolator());
             firstCircleAnim.setDuration(ANIM_DURATION);
 
             ObjectAnimator secondCircleStart = ObjectAnimator.ofFloat(this, "rectSizeSecond",
-                    0, (mSizeInner / 2) - (mBorderWidth));
+                    0, (mInnerSize / 2) - (mBorderWidth));
             secondCircleStart.setInterpolator(new AccelerateInterpolator());
             secondCircleStart.setDuration(ANIM_DURATION);
 
             ObjectAnimator secondCircleEnd = ObjectAnimator.ofFloat(this, "rectSizeSecond",
-                    (mSizeInner / 2) - (mBorderWidth), 0);
+                    (mInnerSize / 2) - (mBorderWidth), 0);
             secondCircleEnd.setInterpolator(new DecelerateInterpolator());
             secondCircleEnd.setDuration(ANIM_DURATION);
 
@@ -114,19 +109,19 @@ public class ThinkViewHelper implements CortanaInterface, Animator.AnimatorListe
 
     public void setRectSizeFirst(float baseValue) {
 
-        if (baseValue == (mSizeOuter / 2)-(mBorderWidth * 0.4)) {
+        if (baseValue == (mOuterSize / 2)-(mBorderWidth * 0.4)) {
             mIsHalfDone = true;
         } else if (baseValue == 0) {
             mIsHalfDone = false;
         }
 
         mOuterRect.set(mBorderWidth /2 + baseValue, mBorderWidth / 2,
-                mSizeOuter - baseValue, mSizeOuter);
+                mOuterSize - baseValue, mOuterSize);
     }
 
     public void setRectSizeSecond(float baseValue) {
         mInnerRect.set((3 * mBorderWidth) / 2 + baseValue, (3 * mBorderWidth) / 2,
-                mSizeInner - baseValue, mSizeInner);
+                mInnerSize - baseValue, mInnerSize);
         mAnimatingView.invalidate();
     }
 

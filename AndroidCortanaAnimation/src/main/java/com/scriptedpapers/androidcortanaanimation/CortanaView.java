@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.scriptedpapers.androidcortanaanimation.helper.AshamedViewHelper;
+import com.scriptedpapers.androidcortanaanimation.helper.BouncyViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.CoolViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.Greeting2ViewHelper;
 import com.scriptedpapers.androidcortanaanimation.helper.GreetingViewHelper;
@@ -106,6 +107,9 @@ public class CortanaView  extends View {
                 break;
             case CortanaType.THINK_TYPE:
                 cortanaInterface = new ThinkViewHelper();
+                break;
+            case CortanaType.BOUNCY_TYPE:
+                cortanaInterface = new BouncyViewHelper();
                 break;
             case CortanaType.ASHAMED_TYPE:
                 cortanaInterface = new AshamedViewHelper();
