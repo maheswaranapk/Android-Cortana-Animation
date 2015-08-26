@@ -49,7 +49,8 @@ public class BouncyViewHelper implements CortanaInterface, Animator.AnimatorList
         mOuterSize = diameter;
 
         mBorderWidth = mOuterSize / 10;
-        mJumpHeight = mOuterSize / 3;
+//        mJumpHeight = mOuterSize / 3;
+        mJumpHeight = 0;
 
         mInnerCirclePaint.setStrokeWidth(mBorderWidth);
         mOuterCirclePaint.setStrokeWidth(mBorderWidth);

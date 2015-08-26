@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 
 import com.scriptedpapers.androidcortanaanimation.CortanaInterface;
 import com.scriptedpapers.androidcortanaanimation.utils.CortanaType;
@@ -143,22 +144,24 @@ public class AshamedViewHelper implements CortanaInterface, Animator.AnimatorLis
 
             outerCircleRotateAnimator = ObjectAnimator.ofFloat(this, "outerRotate",
                     0, outerMiddle, 0, outerRotate1);
+            outerCircleRotateAnimator.setInterpolator(new AccelerateInterpolator());
             outerCircleRotateAnimator.setDuration(ANIM_DURATION);
 
             innerCircleRotateAnimator = ObjectAnimator.ofFloat(this, "innerRotate",
                     0, innerRotate1);
+            innerCircleRotateAnimator.setInterpolator(new AccelerateInterpolator());
             innerCircleRotateAnimator.setDuration(ANIM_DURATION);
 
             outerCircleRotateReverseAnimator = ObjectAnimator.ofFloat(this, "outerRotate",
                     outerRotate1, outerRotate2, 0);
             outerCircleRotateReverseAnimator.setStartDelay(ANIM_DURATION);
-            outerCircleRotateReverseAnimator.setInterpolator(new AccelerateInterpolator());
+            outerCircleRotateReverseAnimator.setInterpolator(new DecelerateInterpolator());
             outerCircleRotateReverseAnimator.setDuration(ANIM_DURATION);
 
             innerCircleRotateReverseAnimator = ObjectAnimator.ofFloat(this, "innerRotate",
                     innerRotate1, innerRotate2, 0);
             innerCircleRotateReverseAnimator.setStartDelay(ANIM_DURATION);
-            innerCircleRotateReverseAnimator.setInterpolator(new AccelerateInterpolator());
+            innerCircleRotateReverseAnimator.setInterpolator(new DecelerateInterpolator());
             innerCircleRotateReverseAnimator.setDuration(ANIM_DURATION);
 
             mAnimator = new AnimatorSet();
