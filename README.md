@@ -1,4 +1,4 @@
-# Android Cortana Animation [Under Development]
+# Android Cortana Animation 
 This Project is a demo of creating Microsoft Cortana Animations in Android.
 
 # **Output**
